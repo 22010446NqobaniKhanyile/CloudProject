@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Cloud22010446_Dut4life.Models.Designs>
+@{ ViewBag.Title = "Myorder";
+    Layout = "~/Views/Shared/CartTab.cshtml"; }
+@{ int sum = 0;
+     }
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .label {
+        font-size: 10pt;
+        font-weight: bold;
+        font-family: Arial;
+    }
+
+    .contents {
+        border: 1px dotted black;
+        padding: 5px;
+        width: 300px;
+    }
+
+    .name {
+        color: #18B5F0;
+    }
+
+    .left {
+        float: left;
+        width: 50px;
+        height: 50px;
+    }
+
+    .right {
+        margin-left: 60px;
+        line-height: 50px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0px;
+        height: 3px;
+        background-color: #666;
+        color: #eee;
+        width: 100%
+    }
+</style>
+
+
+
+
+
+
+        
+
+        @foreach (var x in Model)
+        {
+            sum = Convert.ToInt32(x.Price * x.Quantity) + sum;
+
+        }
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+
+                <td><b>Total</b></td>
+                <td>
+                    &#82;  @sum
+                </td>
+            </tr>
+
+        </tfoot>
+
+    
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
